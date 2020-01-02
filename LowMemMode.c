@@ -8,7 +8,7 @@ uint32_t text_addr, text_size, data_addr, data_size;
 void _start() __attribute__ ((weak, alias ("module_start")));
 
 static tai_hook_ref_t ref_hook0;
-static int sub_8126A8CA_patched(int a1, int a2)
+static int budget_check_patched(int a1, int a2)
 {
 	//Returns > 0 if normal app
 	//Returns 0 if NPXS10015 SceSettings (Launch in PHYMEMLOW mode)
@@ -64,7 +64,7 @@ int module_start(SceSize argc, const void *args)
 	  0,          // segidx
 	  offset,     // offset
 	  1,          // thumb
-	  sub_8126A8CA_patched);
+	  budget_check_patched);
 
   return SCE_KERNEL_START_SUCCESS;
 }
