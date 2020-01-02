@@ -10,7 +10,7 @@ void _start() __attribute__ ((weak, alias ("module_start")));
 static tai_hook_ref_t ref_hook0;
 static int sub_8126A8CA_patched(int a1, int a2)
 {
-	//Returns > 1 if normal app
+	//Returns > 0 if normal app
 	//Returns 0 if NPXS10015 SceSettings (Launch in PHYMEMLOW mode)
 	//??? Returns < 0 if NPXS10104 SceMiniSettings (Launch in special PHYMEMLOW mode) ???
 	return 0;
