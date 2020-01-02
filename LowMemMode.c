@@ -12,7 +12,7 @@ static int budget_check_patched(int a1, int a2)
 {
 	//Returns > 0 if normal app
 	//Returns 0 if NPXS10015 SceSettings (Launch in PHYMEMLOW mode)
-	//??? Returns < 0 if NPXS10104 SceMiniSettings (Launch in special PHYMEMLOW mode) ???
+	//Returns ??? if NPXS10104 SceMiniSettings (Launch in special PHYMEMLOW mode)
 	return 0;
 }
 
