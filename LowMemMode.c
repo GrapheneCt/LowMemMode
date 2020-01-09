@@ -69,7 +69,8 @@ int module_start(SceSize argc, const void *args)
   return SCE_KERNEL_START_SUCCESS;
 }
 
-int module_stop(SceSize argc, const void *args) {
+int module_stop(SceSize argc, const void *args)
+{
 	if (g_hooks[0] >= 0) taiHookRelease(g_hooks[0], ref_hook0);
   return SCE_KERNEL_STOP_SUCCESS;
 }
