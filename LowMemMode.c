@@ -12,7 +12,7 @@ static int budget_check_patched(int a1, int a2)
 {
 	//Returns > 0 if normal app
 	//Returns 0 if NPXS10015 SceSettings or NPXS10104 SceMiniSettings (Launch in PHYMEMLOW mode)
-	
+	//TODO: Prevent user from launching apps that will not launch anyway
 	return 0;
 }
 
