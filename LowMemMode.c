@@ -1,25 +1,16 @@
 #include <taihen.h>
 #include <dolcesdk.h>
 #include <psp2/kernel/modulemgr.h> 
-#include <psp2/appmgr.h> 
 
 static SceUID g_hooks[1];
 uint32_t text_addr, text_size, data_addr, data_size;
 
 void _start() __attribute__((weak, alias("module_start")));
-
-int sceAppMgrIsGameBudgetAppPresent(void);
-//int sceAppMgrIsOtherAppPresent(void);
-//int sceAppMgrGetPidListForShell(SceUID*, int);
-
 static tai_hook_ref_t ref_hook0;
-int budget_check_patched(int a1, int a2)
+int budget_check_patched(void* a1, int a2, int a3)
 {
-	if (!sceAppMgrIsGameBudgetAppPresent()) {
-		return 1;
-	}
-	else
-		return 0;
+	TAI_CONTINUE(int, ref_hook0, a1, a2, a3);
+	return 0;
 }
 
 int module_start(SceSize argc, const void *args)

@@ -31,14 +31,7 @@ add_executable(LowMemMode
 
 target_link_libraries(LowMemMode
   taihen_stub
-  SceLibKernel_stub
   SceKernelModulemgr_stub
-  SceKernelThreadMgr_stub
-  SceProcessMgr_stub
-  SceAppMgr_stub
-  SceLsdb_stub
-  SceIofilemgr_stub 
-  SceSysmem_stub 
 )
 
 set_target_properties(LowMemMode
